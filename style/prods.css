@@ -1,0 +1,23 @@
+.emb-style {
+    width: 100%;
+    height: 100%
+}
+
+.tv-stl {
+    border: 0px;
+    border-radius: 15px;
+    border-style: none;
+    top: 50px;
+    left: 5vh;
+    position: relative;
+}
+
+.chat-emb {
+    border-radius: 15px;
+    border: 0px;
+    border-style: none;
+}
+
+body {
+    background-color: #212121;
+}
