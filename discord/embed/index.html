@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const color = urlParams.get('color');
+    const title = urlParams.get('title');
+    const description = urlParams.get('description');
+    
+    const ogSiteNameMeta = document.createElement('meta');
+    ogSiteNameMeta.setAttribute('property', 'og:site_name');
+    ogSiteNameMeta.setAttribute('content', title);
+    document.head.appendChild(ogSiteNameMeta);
+    
+    const ogDescriptionMeta = document.createElement('meta');
+    ogDescriptionMeta.setAttribute('property', 'og:description');
+    ogDescriptionMeta.setAttribute('content', description);
+    document.head.appendChild(ogDescriptionMeta);
+    
+    if (color) {
+      const themeColorMeta = document.createElement('meta');
+      themeColorMeta.setAttribute('name', 'theme-color');
+      themeColorMeta.setAttribute('content', color);
+      document.head.appendChild(themeColorMeta);
+    }
+  </script>
+  
+</head>
+<body>
+  <h1>My Page</h1>
+  <p>Welcome to my page!</p>
+</body>
+</html>
