@@ -1,0 +1,683 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="img/ethone.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="eel.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="iziToast.min.css">
+    <script src="iziToast.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="overflow:hidden;">
+    
+    
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({
+            animation: true,
+            template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+            classes: {
+            "tooltip": "fade",
+            "show": "show",
+            }
+        });   
+    });
+    </script>
+
+    <div class="container">
+        <div class="navbar">
+            <a onclick="show_home()()">
+                <div class="logo">
+                    <img style="width: 40px; border-radius: 50%;" src="https://icey.fr/discord/logo-v2-white.png" alt="">
+                    <span class="logoname">.dreamSelfbot</span>
+                </div>
+            </a> 
+            <div class="navitem">
+                <div class="account">
+                    <img id="_pfp" src="img/default.png" alt="" onclick="toggle_panel()" width="35px" height="35px">
+                    <div class="sub-menu-wrap hide" id="panel">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <h2 style="padding-bottom: 3px;">Panel</h2>
+
+                                <button style="margin-bottom: 3px;" onclick="eel.restart_()">Restart</button><br>
+
+                                <button onclick="eel.logout_()">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-body">
+            <script>
+ 
+            </script>
+
+            <div class="sidebar">
+                <ul>
+                    <li class="home active" onclick="show_home()" id="home">
+                        <img src="img/home.svg" alt="home">
+                        <a>Home</a>
+                    </li>
+                    <li class="account" onclick="show_account()" id="account">
+                        <img src="img/account.svg" alt="account">
+                        <a>Account</a>
+                    </li>
+                    <li class="console" onclick="show_console()" id="console">
+                        <img src="img/console.svg" alt="console">
+                        <a>Console</a>
+                    </li>
+                    <li class="statistics" onclick="show_statistics()" id="statistics">
+                        <img src="img/statistics.svg" alt="statistics">
+                        <a>Statistics</a>
+                    </li>
+                    <li class="content" onclick="show_content()" ,="" id="content">
+                        <img src="img/content.svg" alt="content">
+                        <a>Content</a>
+                    </li>
+                    <li class="backups" onclick="show_backups()" id="backups">
+                        <img src="img/backups.svg" alt="backups">
+                        <a>Backups</a>
+                    </li>
+                    <li class="community" onclick="show_community()" id="community">
+                        <img src="img/community.svg" alt="community">
+                        <a>Community</a>
+                    </li>
+                    <li class="settings" onclick="show_settings()" id="settings">
+                        <img src="img/settings.svg" alt="settings">
+                        <a>Settings</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main-dashboard" id="homepage" style="opacity: 1;">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/home.svg" alt="home">
+                    <span class="title headtittle-span">Home </span>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-1">
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Discord</h3>
+                                <h3 class="card2">Account: .drmr</h3>
+                                <h3 class="card1" id="account1"></h3>
+                                <h3 class="card2">Friends: 13</h3>
+                                <h3 class="card1" id="friends1"></h3>
+                                <h3 class="card2">Servers: 24</h3>
+                                <h3 class="card1" id="servers1"></h3>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="motd">
+                                <h3 class="cardtittle">Message of the day</h3>
+                                <h3 class="card1" id="ethonemotd1">Don`t be silly bitch. Get a</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                
+            </div>
+            <div class="main-dashboard" id="accountpage" style="opacity: 1;" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/account.svg" alt="account">
+                    <span class="title headtittle-span">Account</span>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-3">
+                        <div class="col">
+                            <div class="discord">
+                                <button class="button1" style="margin-top: 20px;" onclick="eel.panic_button()">Panic Button <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Changes your discord password to log out every current device, then gives you the new credentials. Only use if you have an aged, phone-verified account."></i></button>
+                                <button class="button1" onclick="eel.close_dms()">Close DMs <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Closes every direct message on your account."></i></button>
+                                <button class="button1" onclick="eel.fake_term()">Fake Term <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Changes your name and profile picture to look like you've been disabled. Only use if you have an aged, phone-verified account."></i></button>
+                                <button class="button1" onclick="eel.invisible()">Invisible <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Changes your profile picture to an invisible one and changes your name to invisible symbols. Only use if you have an aged, phone-verified account."></i></button>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="discord">
+                                <button class="button1" onclick="eel.reject_pending_requests()" style="margin-top: 20px;">Reject Pending Requests <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Removes all pending friend requests that you have on your account."></i></button>
+                                <button class="button1" onclick="eel.unblock_everyone()">Unblock Everyone <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Unblocks everyone on your account."></i></button>
+                                <button class="button1" onclick="eel.remove_friends()">Remove Friends <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Removes all friends from your account."></i></button>
+                                <button class="button1" onclick="eel.leave_servers()">Leave Servers <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Leaves all servers / deletes your own servers on your account."></i></button>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Coming soon</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-4">
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Coming soon</h3>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Coming soon</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="consolepage" style="opacity: 1;" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/console.svg" alt="console">
+                    <span class="title headtittle-span">Console </span><img class="erow" style="margin-left: 3px; cursor: default;" src="img/arrow-left.svg"> <img aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 2px;" src="img/arrow-right.svg" onclick="show_executor()" data-original-title="Go to Navigator page"> <button class="right-align clear-button" onclick="eel.clear_console_call()">Clear <img class="clear-img" src="img/clear.svg"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-5">
+                        <div class="col">
+                            <div class="discord" id="true_console"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="executorpage" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/executor.svg" alt="console">
+                    <span class="title headtittle-span">Navigator </span><img aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 3px;" src="img/arrow-left.svg" onclick="show_console()" data-original-title="Go to Console page"> <img class="erow" style="margin-left: 2px; cursor: default;" src="img/arrow-right.svg">
+                </div>
+                <div class="cards">
+                    <div class="row row-5">
+                        <div class="col ex" style="display: flex; overflow: hidden;">
+                            <div class="discord server" id="ex-server">
+                                <input autocomplete="off" spellcheck="false" class="ex-input serv-track" id="server-filter" placeholder="Search servers..." type="text">
+                                <div class="server-con" id="server-container"></div>
+                            </div>
+                            <div class="discord server" id="ex-friends">
+                                <input autocomplete="off" spellcheck="false" class="ex-input frie-track" id="friend-filter" placeholder="Search friends..." type="text">
+                                <div class="server-con" id="friend-container"></div>
+                            </div>
+                            <div class="discord server" id="ex-commands">
+                                <input autocomplete="off" spellcheck="false" class="ex-input comm-track" id="command-filter" placeholder="Search commands..." type="text">
+                                <div class="server-con" id="command-container"></div>
+                            </div>
+                        </div>
+                    </div>                      
+                </div>
+                <script>
+                $(document).ready(function () {
+                    $('.serv-track').keyup(function() {
+                    var value = $(this).val().toLowerCase();
+                    $('.server-div').filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+
+                $(document).ready(function () {
+                    $('.frie-track').keyup(function() {
+                    var value = $(this).val().toLowerCase();
+                    $('.friend-div').filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+
+                $(document).ready(function () {
+                    $('.comm-track').keyup(function() {
+                    var value = $(this).val().toLowerCase();
+                    $('.command-div').filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+                </script>
+            </div>
+            <div class="main-dashboard" id="statisticspage" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/statistics.svg" alt="statistics">
+                    <span class="title headtittle-span">Statistics</span>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-6">
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Uptime</h3>
+                                <h3 class="card3" id="uptime1_"></h3>
+                                <h3 class="cardtittle">Logins</h3>
+                                <h3 class="card3" id="logins1_"></h3>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Total Events Triggered</h3>
+                                <h3 class="card3" id="events1_"></h3>
+                                <h3 class="cardtittle">Total Commands Used</h3>
+                                <h3 class="card3" id="totalcommandsused1_"></h3>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Commands Used In Session</h3>
+                                <h3 class="card3" id="commandsused1_"></h3>
+                                <h3 class="cardtittle">Favourite Command</h3>
+                                <h3 class="card3" id="command1_"></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-4">
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Sniped Nitro</h3>
+                                <h3 class="card3" id="nitro1_"></h3>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Joined Giveaways</h3>
+                                <h3 class="card3" id="giveaways1_"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="contentpage" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/content.svg" alt="content">
+                    <span class="title headtittle-span">Content</span>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-4">
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Chat Backups</h3>
+                                <button class="button1" onclick="eel.start_chat_latest()">Open Latest Chat <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the latest Chat Backup file."></i></button><br>
+                                <button class="button1" onclick="eel.start_chat_folder()">Open Folder <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the Chat Backups folder."></i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">GC Scraper Backups</h3>
+                                <button class="button1" onclick="eel.start_group_latest()">Open Latest GC Chat <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the latest Group Chat Backup file."></i></button><br>
+                                <button class="button1" onclick="eel.start_group_folder()">Open Folder <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the Group Chat Backups folder."></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-4">
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Themes</h3>
+                                <h3 class="card2" id="activetheme1_"></h3>
+                                <button class="button1" onclick="eel.start_themes_folder()">Open Folder <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the Themes folder."></i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Custom Scripts</h3>
+                                <h3 class="card2" id="injectedscripts1_"></h3>
+                                <button class="button1" onclick="eel.start_scripts_folder()">Open Folder <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the Scripts folder."></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="backupspage" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/backups.svg" alt="backups">
+                    <span class="title headtittle-span">Backups</span>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-4">
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Manage your Account</h3>
+                                <button class="button1" onclick="eel.create_backup()">Backup Account Now <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Creates a full Backup of your account."></i></button><br>
+                                <button class="button1" onclick="restore_backup_friends()">Restore Account From Latest Backup <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Restores your account with the latest backup."></i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">View Backups</h3>
+                                <button class="button1" onclick="eel.start_account_latest()">Open Latest Backup <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the latest Account Backup file."></i></button><br>
+                                <button class="button1" onclick="eel.start_account_folder()">Open Folder <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens the Account Backups folder."></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-7">
+                        <div class="col">
+                            <div class="ethone">
+                                <h3 class="cardtittle">Total Backups</h3>
+                                <h3 class="card3" id="totalbackups1_"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="communitypage" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/community.svg" alt="community">
+                    <span class="title headtittle-span">Community</span>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-7">
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Utility</h3>
+                                <button class="button1" onclick="eel.delete_themes()">Delete all Themes <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Deletes all Themes and switches to the default one."></i></button><br>
+                                <button class="button1" onclick="eel.delete_scripts()">Delete all Custom Scripts <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Deletes all Custom Scripts."></i></button><br>
+                                <button class="button1" onclick="eel.reset_configs()">Reset Settings <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Resets your Main Config and Webhook Config. Auth Config and Discord Config will stay the same. Restart is required."></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-4">
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Themes</h3>
+                                <h3 class="card2" id="totalthemes1_"></h3>
+                                <button class="button1" onclick="eel.open_themes()">Browse Themes <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens Themes marketplace."></i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="discord">
+                                <h3 class="cardtittle">Custom Scripts</h3>
+                                <h3 class="card2" id="totalscripts1_"></h3>
+                                <button class="button1" style="cursor: not-allowed;" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This feature is still work in progress.">Browse Custom Scripts <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Opens Custom Scripts marketplace."></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="settings1page" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/settings.svg">
+                    <span class="title headtittle-span">Settings</span> <div style="display: inline-block;" class="arrow-border"><span class="arrow-a">PAGE 1</span></div> <img class="erow" style="margin-left: 6px; cursor: default;" src="img/arrow-left.svg"> <img aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 2px;" src="img/arrow-right.svg" onclick="show_settings2()" data-original-title="Go to next page"><button class="right-align save-button" onclick="eel.save_settings()">Save <img class="save-img" src="img/save.svg"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-8">
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Prefix <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what you want to use as trigger for commands. Example prefix: . = .help"></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Prefix" required="" id="s_prefix">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Delete Timer <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines when messages sent by Ethone should be automatically deleted. The number entered is in seconds."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="number" class="settings-input" placeholder="Your Delete Timer" required="" id="s_delete_timer">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Mode <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines in what mode format you want Ethones messages to be in."></i></h3>
+                                <div class="custom-select">
+                                    <div class="custom-select__trigger" id="s_mode">Codeblock</div>
+                                    <div class="custom-select__options" id="s_mode_options">
+                                        <div class="custom-select__option" data-value="codeblock">Codeblock</div>
+                                        <div class="custom-select__option" data-value="quote">Quote</div>
+                                        <div class="custom-select__option" data-value="embed">Embed</div>
+                                        <div class="custom-select__option" data-value="webhook">Webhook</div>
+                                    </div>
+                                    <select class="custom-select__fallback" id="s_mode_fallback">
+                                        <option value="codeblock">Codeblock</option>
+                                        <option value="quote">Quote</option>
+                                        <option value="embed">Embed</option>
+                                        <option value="webhook">Webhook</option>
+                                    </select>
+                                </div>
+                                                                                         
+                                <h3 class="cardtittle" style="padding-top: 10px;">Stream URL <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the link that people get sent to when clicking on your stream via the (p)stream command. Only Youtube video or Twitch links work."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Stream URL" required="" id="s_stream_url">
+                            </div>
+                        </div>
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Group Chat Scraper <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want Ethones exclusive GC Scraping System enabled. This feature will dump the previous group chat history into a file instantly, once you get added to one."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_scrape_on_group_join">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Auto Group Leave <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to automatically leave a group once you get added. If Group Chat Scraper is enabled, it will scrape and dump the chat first, then leave."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_auto_group_leave">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Toast Notifications <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want windows popup notifications for events, also called toasts."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_toast_notifications">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Sound Notifications <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want custom sounds on events."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_sound_notifications">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="settings2page" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/settings.svg">
+                    <span class="title headtittle-span">Settings</span> <div style="display: inline-block;" class="arrow-border"><span class="arrow-a">PAGE 2</span></div> <img data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 6px;" src="img/arrow-left.svg" onclick="show_settings1()" data-original-title="Go to previous page"> <img aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 2px;" src="img/arrow-right.svg" onclick="show_settings3()" data-original-title="Go to next page"><button class="right-align save-button" onclick="eel.save_settings()">Save <img class="save-img" src="img/save.svg" alt="community"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-8">
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Webhook Logging <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want events automatically get sent to the desired webhook."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_webhook_logging">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Dm Logging <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to log people that edit / delete DMs."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_dm_logging">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Revenge Ghostping <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to ghostping people that ghostpinged you 120 seconds later."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_revenge_ghostping">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Auto Decline Friend Requests <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to automatically decline any incoming friend requests."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_auto_decline_fas">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Anti Report <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to automatically delete your messages inside servers after set delay."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_anti_report">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Anti Report Delay <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the delay after your messages should be deleted. The number entered is in seconds."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="number" class="settings-input" placeholder="Your Anti Report Delay" required="" id="s_anti_report_delay">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Anti Tokenlog <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="First released by Ethone, now implemented into every competitors selfbot. This feature detects logins that are not whitelisted by you, and changes your discord password."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_anti_tokenlog">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Anti Tokenlog Cooldown <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the cooldown after each session check. Low number: quicker detection, higher number: less suspicious for Discord. The number entered is in seconds."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="number" class="settings-input" placeholder="Your Anti Tokenlog Cooldown" required="" id="s_anti_tokenlog_cooldown">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="settings3page" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/settings.svg">
+                    <span class="title headtittle-span">Settings</span> <div style="display: inline-block;" class="arrow-border"><span class="arrow-a">PAGE 3</span></div> <img data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 6px;" src="img/arrow-left.svg" onclick="show_settings2()" data-original-title="Go to previous page"> <img aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 2px;" src="img/arrow-right.svg" onclick="show_settings4()" data-original-title="Go to next page"><button class="right-align save-button" onclick="eel.save_settings()">Save <img class="save-img" src="img/save.svg" alt="community"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-8">
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Anti DM Advertise <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to automatically close DMs that advertise."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_anti_dm_advertise">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">AFK Mode <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to automatically respond to DMs."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_afk_mode">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">AFK Response <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what you want to use as AFK Mode response message."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your AFK Response" required="" id="s_afk_response">
+                                <h3 class="cardtittle" style="padding-top: 10px;">AFK Response Cooldown <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what you want to use as AFK Mode response cooldown. The number entered is in seconds."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="number" class="settings-input" placeholder="Your AFK Response Cooldown" required="" id="s_afk_response_cooldown">
+                            </div>
+                        </div>
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Token Sniper <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to snipe discord tokens and log them into console."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_token_sniper">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Nitro Sniper <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to snipe discord gifts and automatically redeem them."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_nitro_sniper">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Giveaway Joiner <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This toggles if you want to automatically join giveaways."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_giveaway_joiner">
+                                    <span class="slider"></span>
+                                </label>
+                                <h3 class="cardtittle" style="padding-top: 10px;">Giveaway Word blacklist <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what giveaways not to join. Seperate the words with a space."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Giveaway Word Blacklist" required="" id="s_giveaway_word_blacklist">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="settings4page" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/settings.svg">
+                    <span class="title headtittle-span">Settings</span> <div style="display: inline-block;" class="arrow-border"><span class="arrow-a">PAGE 4</span></div> <img data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 6px;" src="img/arrow-left.svg" onclick="show_settings3()" data-original-title="Go to previous page"> <img aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 2px;" src="img/arrow-right.svg" onclick="show_settings5()" data-original-title="Go to next page"><button class="right-align save-button" onclick="eel.save_settings()">Save <img class="save-img" src="img/save.svg" alt="community"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-8">
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Giveaway Join Delay <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the delay for Ethone to wait until it enters the found giveaway. The number entered is in seconds."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="number" class="settings-input" placeholder="Your Giveaway Join Delay" required="" id="s_giveaway_join_delay">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Presence <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what presence you want to use."></i></h3>
+                                <div class="custom-select">
+                                    <div class="custom-select__trigger" id="s_presence">Online</div>
+                                    <div class="custom-select__options" id="s_presence_options">
+                                        <div class="custom-select__option" data-value="online">Online</div>
+                                        <div class="custom-select__option" data-value="idle">Idle</div>
+                                        <div class="custom-select__option" data-value="dnd">Do not Disturb</div>
+                                        <div class="custom-select__option" data-value="offline">Invisible</div>
+                                    </div>
+                                    <select class="custom-select__fallback" id="s_presence_fallback">
+                                        <option value="online">Online</option>
+                                        <option value="idle">Idle</option>
+                                        <option value="dnd">Do Not Disturb</option>
+                                        <option value="offline">Invisible</option>
+                                    </select>
+                                </div>
+
+                                <h3 class="cardtittle" style="padding-top: 10px;">Discord Token <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is used to connect to your Discord account."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input2" placeholder="Your Discord Token" required="" id="s_discord_token">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Discord Password <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is used for features that require your Discord password such as Anti Tokenlog."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input2" placeholder="Your Discord Password" required="" id="s_discord_password">
+                            </div>
+                        </div>
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Webhook URL <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines where Ethone should send event logs to."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input2" placeholder="Your Webhook URL" required="" id="s_webhook_url">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Webhook Name <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the webhook name."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Webhook Name" required="" id="s_webhook_name">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Webhook Image URL <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the image that should be displayed on your webhook logs."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Webhook Image URL" required="" id="s_webhook_image_url">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Webhook Title <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the webhook title."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Webhook Title" required="" id="s_webhook_title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="settings5page" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/settings.svg">
+                    <span class="title headtittle-span">Settings</span> <div style="display: inline-block;" class="arrow-border"><span class="arrow-a">PAGE 5</span></div> <img data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 6px;" src="img/arrow-left.svg" onclick="show_settings4()" data-original-title="Go to previous page"> <img class="erow" style="margin-left: 2px" onclick="show_settings6()" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" src="img/arrow-right.svg" data-original-title="Go to next page"><button class="right-align save-button" onclick="eel.save_settings()">Save <img class="save-img" src="img/save.svg" alt="community"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-8">
+                        <div class="col col2">
+                            <div class="discord2">
+                                <h3 class="cardtittle">Webhook Footer <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the webhook footer."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Webhook Footer" required="" id="s_webhook_footer">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Webhook Color <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the webhook color."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Webhook Color" required="" id="s_webhook_color">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Capmonster API Key <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is required for some features. Website: www.capmonster.cloud"></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input2" placeholder="Your Capmonster API Key" required="" id="s_capmonster">
+                                <h3 class="cardtittle" style="padding-top: 10px;">Theme <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines the theme you want to use for Ethone."></i></h3>
+                                <input autocomplete="off" spellcheck="false" type="text" class="settings-input" placeholder="Your Theme" required="" id="s_theme">
+                            </div>
+                        </div>
+                        <div class="col col2">
+                            <div class="discord2" style="height: 340px">
+                                <h3 class="cardtittle">Raid Tokens <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what tokens you want to use for raiding. Format: token"></i></h3>
+                                <textarea cols="50" spellcheck="false" class="settings-textarea" id="s_raid_tokens"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-dashboard" id="settings6page" hidden="">
+                <div class="headtittle">
+                    <img class="headtittle-img" src="img/settings.svg">
+                    <span class="title headtittle-span">Settings</span> <div style="display: inline-block;" class="arrow-border"><span class="arrow-a">PAGE 6</span></div> <img data-toggle="tooltip" data-placement="top" title="" class="erow" style="margin-left: 6px;" src="img/arrow-left.svg" onclick="show_settings5()" data-original-title="Go to previous page"> <img class="erow" style="margin-left: 2px; cursor: default;" src="img/arrow-right.svg"><button class="right-align save-button" onclick="eel.save_settings()">Save <img class="save-img" src="img/save.svg" alt="community"></button>
+                </div>
+
+                <div class="cards">
+                    <div class="row row-8">
+                        <div class="col col2">
+                            <div class="discord2" style="height: 340px">
+                                <h3 class="cardtittle">Proxies <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what proxies you want to use for Ethone. We recommend Iproyal residential proxies. Format: user:password@host:port"></i></h3>
+                                <textarea cols="50" spellcheck="false" class="settings-textarea" id="s_proxies"></textarea>
+                            </div>
+                        </div>
+                        <div class="col col2">
+                            <div class="discord2" style="height: 340px">
+                                
+                                <h3 class="cardtittle">Alt Tokens <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="This defines what alt tokens you want to snipe nitro &amp; join giveaways with and if you want alt tokens enabled."></i></h3>
+                                <label class="switch">
+                                    <input autocomplete="off" spellcheck="false" type="checkbox" id="s_alt_token">
+                                    <span class="slider"></span>
+                                </label>
+                                <textarea style="height: calc(100% - 102px);" cols="50" spellcheck="false" class="settings-textarea" id="s_alt_tokens"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body></html>
