@@ -759,13 +759,8 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 	font-size: 14px;
 	padding-left: 20px;
 	padding-top: 5px;
-	filter: blur(99px);
-    transition: filter 0.5s ease-in-out
 }
 
-.card2:hover {
-	filter: none;
-}
 
 .card3 {
 	color: #bbb;
