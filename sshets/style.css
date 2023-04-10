@@ -274,7 +274,7 @@ body:hover {
 
 .container-body .sidebar ul .active {
 	background-color: hsla(266,100%,10%,1);
-	background-image: radial-gradient(at 28% 22%,hsla(260,100%,50%,1) 0px,transparent 63%),radial-gradient(at 2% 93%,hsla(241,78%,32%,1) 0px,transparent 61%),radial-gradient(at 62% 75%,hsla(252,100%,23%,1) 0px,transparent 58%),radial-gradient(at 84% 27%,hsla(254,93%,32%,1) 0px,transparent 80%),radial-gradient(at 100% 100%,#13002d 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%);
+	background-image: radial-gradient(at 28% 22%,rgb(255, 0, 0) 0px,transparent 63%),radial-gradient(at 2% 93%,rgb(145, 18, 18) 0px,transparent 61%),radial-gradient(at 62% 75%,rgb(117, 0, 0) 0px,transparent 58%),radial-gradient(at 84% 27%,rgb(157, 6, 6) 0px,transparent 80%),radial-gradient(at 100% 100%,#2d0000 0px,transparent 100%),radial-gradient(at 0% 0%,rgb(117, 0, 0) 0px,transparent 100%);
 	background-size: 110% 110%;
 	-webkit-animation: gradient 5s ease infinite;
 	animation: gradient 5s ease infinite;
@@ -290,7 +290,7 @@ body:hover {
 
 .container-body .sidebar ul .active:hover {
 	background-color: hsla(266,100%,10%,1);
-	background-image: radial-gradient(at 28% 22%,hsla(260,100%,50%,1) 0px,transparent 63%),radial-gradient(at 2% 93%,hsla(241,78%,32%,1) 0px,transparent 61%),radial-gradient(at 62% 75%,hsla(252,100%,23%,1) 0px,transparent 58%),radial-gradient(at 84% 27%,hsla(254,93%,32%,1) 0px,transparent 80%),radial-gradient(at 100% 100%,#13002d 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%);
+	background-image: radial-gradient(at 28% 22%,rgb(255, 0, 0) 0px,transparent 63%),radial-gradient(at 2% 93%,rgb(145, 18, 18) 0px,transparent 61%),radial-gradient(at 62% 75%,rgb(117, 0, 0) 0px,transparent 58%),radial-gradient(at 84% 27%,rgb(157, 6, 6) 0px,transparent 80%),radial-gradient(at 100% 100%,#2d0000 0px,transparent 100%),radial-gradient(at 0% 0%,rgb(117, 0, 0) 0px,transparent 100%);
 	border-radius: 8px;
 	padding: 10px
 }
@@ -1138,7 +1138,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 	position: absolute;
 	width: 70px;
 	height: 100%;
-	background-image: radial-gradient(at 28% 22%,hsla(260,100%,50%,1) 0px,transparent 63%),radial-gradient(at 2% 93%,hsla(241,78%,32%,1) 0px,transparent 61%),radial-gradient(at 62% 75%,hsla(252,100%,23%,1) 0px,transparent 58%),radial-gradient(at 84% 27%,hsla(254,93%,32%,1) 0px,transparent 80%),radial-gradient(at 100% 100%,#13002d 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%);
+	background-image: radial-gradient(at 28% 22%,rgb(255, 0, 0) 0px,transparent 63%),radial-gradient(at 2% 93%,rgb(145, 18, 18) 0px,transparent 61%),radial-gradient(at 62% 75%,rgb(117, 0, 0) 0px,transparent 58%),radial-gradient(at 84% 27%,rgb(157, 6, 6) 0px,transparent 80%),radial-gradient(at 100% 100%,#2d0000 0px,transparent 100%),radial-gradient(at 0% 0%,rgb(117, 0, 0) 0px,transparent 100%);
 	border-radius: 30px;
 	transition: .2s
 }
@@ -1204,7 +1204,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 
 .submit-btn:hover {
 	box-shadow: #ffffff7c 0 0 0 0;
-	background-image: radial-gradient(at 28% 22%,#4000ff 0px,transparent 100%),radial-gradient(at 2% 93%,#0603bf 0px,transparent 100%),radial-gradient(at 62% 75%,#2f00ea 0px,transparent 100%),radial-gradient(at 84% 27%,hsla(254,93%,32%,1) 0px,transparent 100%),radial-gradient(at 100% 100%,#000fe8 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%)
+	background-image: radial-gradient(at 28% 22%,#ff0000 0px,transparent 100%),radial-gradient(at 2% 93%,#bf0303 0px,transparent 100%),radial-gradient(at 62% 75%,#ea0000 0px,transparent 100%),radial-gradient(at 84% 27%,rgb(157, 6, 6) 0px,transparent 100%),radial-gradient(at 100% 100%,#e80000 0px,transparent 100%),radial-gradient(at 0% 0%,rgb(117, 0, 0) 0px,transparent 100%)
 }
 
 .check-box {
@@ -1801,8 +1801,8 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     font-size: 14px;
     font-weight: bolder;
     color: #ffffff;
-    background: linear-gradient(to top right,#3c00ff,#e100ff);
-    box-shadow: #3c00ff 0 0 5px 1px;
+    background: linear-gradient(to top right,#ff0000,#ff0000);
+    box-shadow: #ff0000 0 0 5px 1px;
     display: inline-block;
 }
 
@@ -1821,8 +1821,8 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 	font-size: 14px;
 	font-weight: bolder;
 	color: #c4c4c4;
-	background: linear-gradient(to top right,#3c00ff,#e100ff);
-	box-shadow: #3c00ff 0 0 5px 1px;
+	background: linear-gradient(to top right,#ff0000,#ff0000);
+	box-shadow: #ff0000 0 0 5px 1px;
 }
 
 .modal-button_:hover {
