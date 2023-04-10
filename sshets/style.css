@@ -12,7 +12,7 @@
 
 body {
 	background-color: hsla(266,100%,10%,1);
-	background-image: radial-gradient(at 28% 22%,hsla(260,100%,50%,1) 0px,transparent 100%),radial-gradient(at 2% 93%,hsla(241,78%,32%,1) 0px,transparent 100%),radial-gradient(at 62% 75%,hsla(252,100%,23%,1) 0px,transparent 100%),radial-gradient(at 84% 27%,hsla(254,93%,32%,1) 0px,transparent 100%),radial-gradient(at 100% 100%,#5100e8 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%);
+	background-image: radial-gradient(at 28% 22%,rgb(255, 0, 0) 0px,transparent 100%),radial-gradient(at 2% 93%,rgb(145, 18, 18) 0px,transparent 100%),radial-gradient(at 62% 75%,rgb(117, 0, 0) 0px,transparent 100%),radial-gradient(at 84% 27%,rgb(157, 6, 6) 0px,transparent 100%),radial-gradient(at 100% 100%,#e80000 0px,transparent 100%),radial-gradient(at 0% 0%,rgb(117, 0, 0) 0px,transparent 100%);
 	background-size: 400% 400%;
 	-webkit-animation: gradient 15s ease infinite;
 	animation: gradient 15s ease infinite;
@@ -675,7 +675,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 .settings-input2 {
 	width: calc(100% - 30px);
 	height: 30px;
-	background: linear-gradient(to top right,rgba(41,41,41,0.289),rgba(50,50,50,0.382));
+	background: linear-gradient(to top right, rgba(41,41,41,0.289),rgba(50,50,50,0.382));
 	color: transparent;
 	text-shadow: 0 0 5px #adadad;
 	font-size: 14px;
@@ -758,7 +758,13 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 	color: #d3d3d3;
 	font-size: 14px;
 	padding-left: 20px;
-	padding-top: 5px
+	padding-top: 5px;
+	filter: blur(99px);
+    transition: filter 0.5s ease-in-out
+}
+
+.card2:hover {
+	filter: none;
 }
 
 .card3 {
@@ -1076,7 +1082,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 .hero {
 	width: 100%;
 	height: 100%;
-	background-image: radial-gradient(at 28% 22%,#30f 0px,transparent 100%),radial-gradient(at 2% 93%,hsla(241,78%,32%,1) 0px,transparent 100%),radial-gradient(at 62% 75%,hsla(252,100%,23%,1) 0px,transparent 100%),radial-gradient(at 84% 27%,hsla(254,93%,32%,1) 0px,transparent 100%),radial-gradient(at 100% 100%,#000fe8 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%);
+	background-image: radial-gradient(at 28% 22%,rgb(255, 0, 0) 0px,transparent 100%),radial-gradient(at 2% 93%,rgb(145, 18, 18) 0px,transparent 100%),radial-gradient(at 62% 75%,rgb(117, 0, 0) 0px,transparent 100%),radial-gradient(at 84% 27%,rgb(157, 6, 6) 0px,transparent 100%),radial-gradient(at 100% 100%,#e80000 0px,transparent 100%),radial-gradient(at 0% 0%,hsla(266,100%,23%,1) 0px,transparent 100%);
 	background-size: 120% 120%;
 	-webkit-animation: gradient 2s ease infinite;
 	animation: gradient 2s ease infinite;
