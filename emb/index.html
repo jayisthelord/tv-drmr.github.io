@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Embed Meta Tags Example</title>
+
+  <script>
+    // Extract URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('title') || 'Default Title';
+    const description = urlParams.get('description') || 'Default Description';
+    const color = urlParams.get('color') || 'Default Color';
+    const imageone = urlParams.get('imageone') || 'https://via.placeholder.com/300';
+
+    // Generate meta tags dynamically
+    const metaTags = `
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="${title}">
+      <meta property="og:description" content="${description}">
+      <meta property="og:image" content="${imageone}">
+      <meta property="og:image:alt" content="${title}">
+      <meta property="og:site_name" content="tools.icey.fr">
+      <meta property="og:url" content="${window.location.href}">
+      <meta property="og:locale" content="en_US">
+      <meta name="theme-color" content="${color}">
+    `;
+
+    // Add the meta tags to the head section of the HTML document
+    document.head.insertAdjacentHTML('beforeend', metaTags);
+  </script>
+</head>
+<body>
+  <p>This is an example HTML document that generates Discord Embed meta tags dynamically based on the URL parameters.</p>
+</body>
+</html>
