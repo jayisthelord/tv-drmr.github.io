@@ -65,7 +65,7 @@
                 </a>
             </div>
             <layout-grid class="section-home--intro__content">
-                <h1 text="xxl 600">IceySMP is on another level of fun, play with your friends and more. Join us on play.icey.fr</h1>
+                <h1 text="xxl 600">IceySMP is on another level of fun, play with your friends and more. Join <span id="player-count">0</span> other players on play.icey.fr</h1>
                 <layout-grid class="section-home--intro__navigation" align-content="end" role="navigation">
                     <a text="xxl 600 white hover-green-dark" class="navigation-item" href="https://onedrive.live.com/download?cid=E55600B328224FA8&resid=E55600B328224FA8%2179338&authkey=AFYBNePhRif_DZM" tabindex="0" aria-label="Open Downloads Page">
                         <h2>Download</h2>
@@ -165,7 +165,32 @@
     </elements>
 
 
-
+    <script>
+        function initServerData(serverIp,serverPort){
+            const serverIpElement = document.getElementById('server-ip');
+            serverIpElement.innerHTML = serverIp;
+            fetch('https://mcapi.us/server/status?ip=play.icey.fr&port=17550')
+            .then(response => response.json())
+            .then(data => handleServerStatus(data));
+      
+            function handleServerStatus(data){
+                if(data.status=='error'){
+                    console.log(data.error);
+                    return false;
+                }
+                const motd = document.getElementById("motd");
+                motd.innerHTML = data.motd;
+    
+                const playerCounter = document.getElementById("player-count");
+                playerCounter.innerHTML = data.players.now;
+    
+                const logo = document.getElementById("server-icon");
+                logo.src = data.favicon;
+            } 
+        }
+    
+        initServerData("play.dawn-mc.net","25565");
+    </script>
 <script type="application/javascript" crossorigin="anonymous" id="ecmascript-commons" integrity="sha384-CJIzOLSimYKB/9RfoIZmUSrmjT/YYhJ86N/HDDwrd+/hv8JRWhLfZbOBdM4ldR3m" src="./index_files/commons-b9e71274ddab35f6.js.download"></script>
 <script type="application/javascript" crossorigin="anonymous" id="ecmascript-app" integrity="sha384-Aei8DKSg0RhFygrMATEEogqSVF0tPj97Lbeantz8VjKrxKEAGUwSmQ1vT+DQkG8R" src="./index_files/main-b9324838835f3871.js.download"></script>
 
