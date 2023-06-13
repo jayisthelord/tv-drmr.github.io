@@ -1,0 +1,11 @@
+{
+  "accessory_pairing_id": "13:00:00:00:00:00",
+  "accessory_pin": "031-45-154",
+  "c#": 16,
+  "category": "Thermostat",
+  "host_ip": "192.168.0.105",
+  "host_port": 9090,
+  "name": "DemoAccessory",
+  "peers": {},
+  "unsuccessful_tries": 0
+}
